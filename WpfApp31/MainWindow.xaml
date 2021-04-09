@@ -1,0 +1,40 @@
+﻿<ribbon:RibbonWindow x:Class="WpfApp31.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon"
+                     xmlns:wpfApp31="clr-namespace:WpfApp31">
+
+    <DockPanel>
+        <ribbon:Ribbon DockPanel.Dock="Top" x:Name="Ribbon">
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:Backstage />
+            </ribbon:Ribbon.ApplicationMenu>
+
+            <ribbon:Tab Label="START">
+                <ribbon:Group Label="Clipboard">
+                    <ribbon:StackPanel>
+                        <ribbon:Button Label="Cut" />
+                        <ribbon:Button Label="Copy" />
+                        <ribbon:Button Label="Paste" />
+                    </ribbon:StackPanel>
+                </ribbon:Group>
+            </ribbon:Tab>
+            <ribbon:Tab Label="VIEW">
+
+                <ribbon:Group x:Name="Group" Label="Views" />
+
+            </ribbon:Tab>
+
+            <ribbon:Ribbon.ContextualTabGroups>
+                <ribbon:ContextualTabGroup Label="NETWORK" IsActive="True">
+                    <ribbon:Tab Label="NETWORK" />
+                </ribbon:ContextualTabGroup>
+            </ribbon:Ribbon.ContextualTabGroups>
+
+        </ribbon:Ribbon>
+        
+        <wpfApp31:DetailView/>
+
+    </DockPanel>
+
+</ribbon:RibbonWindow>
